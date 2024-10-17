@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="naruto.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<style>
+    #myVideo {
+        background-position: fixed;
+        width: 1300px;
+        height: 1000px;
+        z-index: -1;
+        
+        background-attachment: fixed;
+        background-size: cover;
+
+        
+ 
+}
+#myVideo {
+    position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Makes sure the video scales properly without distortion */
+            z-index: -1; 
+}
+
+/* Video styling */
+/* #background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: no-repeat center center;
+  background-size: cover;
+} */
+    body{
+        /* background-image: url("images.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        
+    }
+    /* Basic reset for removing default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the navigation bar */
+nav {
+    background-color: #333; /* Dark background for the menu */
+    padding: 10px 0;
+    position: relative;
+    
+    float: right;
+    
+}
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100px; /* Adjust this value for how wide the slant should be */
+    height: 100%;
+    background-color: #333; /* Same color as the nav background */
+    transform: skewX(-20deg); /* Slant the edge */
+    transform-origin: top left; /* Control where the slant starts */
+    z-index: 1; /* Ensure it stays behind the menu content */
+}
+
+
+/* Menu list styles */
+.menu {
+    list-style-type: none; /* Removes bullet points from the list */
+    display: flex;         /* Makes the menu items appear in a row (horizontal layout) */
+    justify-content: flex-end; /* Centers the menu items */
+    position: relative;
+  
+    margin-left: 85px;
+    padding-right: 20px;
+   
+
+}
+
+/* Menu items */
+.menu li {
+    margin: 0 15px; /* Space between each menu item */
+    position: relative; /* Necessary for dropdown positioning */
+}
+
+/* Links inside the menu */
+.menu a {
+    color: white; /* White text color */
+    text-decoration: none; /* Removes underline from the links */
+    font-size: 18px; /* Size of the text */
+    font-family: Arial, sans-serif; /* Font for the text */
+    padding: 10px 15px; /* Adds padding inside the clickable area */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.menu a:hover {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px;     /* Rounded corners */
+}
+
+/* Dropdown submenu */
+.submenu {
+    display: none; /* Hide the submenu by default */
+    position: absolute; /* Position the submenu relative to its parent */
+    top: 146%; /* Place the submenu just below the parent item */
+    left: 0;
+    background-color: #333; /* Same background as the menu */
+    list-style-type: none; /* No bullet points */
+    padding: 10px 0; /* Some padding around the submenu */
+    min-width: 150px; /* Minimum width for the dropdown */
+    border-radius: 5px;
+}
+
+/* Submenu items */
+.submenu li {
+    margin: 0;
+}
+
+/* Links inside the submenu */
+.submenu a {
+    padding: 10px 15px; /* Padding inside the submenu links */
+    display: block;     /* Make the links take up full width */
+    color: white;       /* Same white color for the submenu links */
+    text-decoration: none;
+}
+
+/* Show the submenu when hovering over the parent li */
+.dropdown:hover .submenu {
+    
+    display: block; /* Show submenu on hover */
+}
+
+/* Hover effect for submenu items */
+.submenu a:hover {
+    background-color: #555; /* Same hover effect for submenu items */
+}
+#login{
+    border-style: groove;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 24px;
+    display: inline-block;
+    padding:100px;
+    margin-left: 100px;
+    box-shadow: 4px 4px 4px 1px grey;
+    margin-top: 80px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+
+}
+
+#login:hover{
+    
+    transform:scale(1.01);
+    border-color: #181414;
+} 
+    
+    
+
+ input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f8f8f8; /* Light gray background */
+      color: #333; /* Dark gray text */
+      font-size: 16px;
+      transition: border-color 0.3s ease; /* Smooth border color transition */
+    }
+
+    input:focus {
+      border-color: #007BFF; /* Highlight border on focus */
+      outline: none; /* Remove default focus outline */
+    }
+
+/* #box1{
+    border-radius: 24px;
+    width: 250px;
+    height: 35px;
+    
+}
+#box2{
+    border-radius: 24px;
+    width: 250px;
+    height: 35px;
+    border-color: black;
+
+} */
+#button{
+    /* width: 100px;
+    height: 30px; */
+   
+    padding: 12px 20px;
+      background-color: #007BFF; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+}
+button:hover {
+      background-color: #0056b3; 
+    }
+
+</style>
+
+
+</head>
+<div class="container">
+<body >
+    <video autoplay muted loop id="myVideo">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+
+    <nav>
+    <ul class="menu">
+         <li><a href="">About us</a></li> 
+        <li><a href="">contact</a></li>
+        <li><a href="">products</a></li>
+        <li class="dropdown"><a href="#">follow us on</a>
+        <ul class="submenu">
+          <li><a href="">facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">whatsapp</a></li>
+       </ul>
+        </li>
+        <li><a href="">upload content</a></li>
+
+        
+          
+    </ul> 
+</nav><br><br><br><br><br>
+    <!-- <nav>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#services">Services</a>
+                <ul class="submenu">
+                    <li><a href="#web-design">Web Design</a></li>
+                    <li><a href="#app-development">App Development</a></li>
+                    <li><a href="#seo">SEO</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav> -->
+<div id="login">
+    <label for="username" style="color: rgb(245, 10, 245);">username</label><br>
+    <input type="text" id="Name"></input><br>
+    <br>
+    <label for="password" style="color: rgb(245, 8, 174);">password</label><br>
+    <input type="password"  id="passingword" ></input><br><br><br>
+    <button onclick="action()"  id="button" >login</button>
+    </div>
+
+    <script>
+    function action(){
+    
+        var one=document.getElementById("Name").value;
+        var two=document.getElementById("passingword").value;
+
+        if (one === "") {
+            alert("Please fill the username");
+        } else if (two === "") {
+            alert("Please fill the password");
+        } else {
+            alert("You are logged in");
+        }
+    
+    }
+    </script>
+
+    <br><br><br><p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi itaque necessitatibus tempore earum, incidunt officiis ipsum quidem ab amet delectus ea aut quas alias temporibus nulla sapiente voluptatum in quia explicabo excepturi, blanditiis cum. Nostrum ea totam consequuntur. Cupiditate, quaerat. Libero, ratione doloremque nam delectus ducimus magnam esse maxime similique! Ut, laborum nemo! Recusandae reiciendis, officia adipisci tempore harum molestiae doloribus autem repellat dolorum. Est debitis doloribus corrupti eos eaque, nulla laboriosam quaerat molestias itaque repellat, fugiat et minima molestiae iusto, commodi eligendi iure ipsam obcaecati unde alias aliquam pariatur. Dicta maxime corporis possimus esse sequi repellendus saepe adipisci veniam!
+        </p>
+        <h2 style="color: white;">Grid System</h2>
+<div class="row" style="color: white;">  
+  <div class="col-sm-4" >  
+    <h2>Rank</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>About</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+    
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>Label</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+    
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>Info</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+    
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>TCS</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+    
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>spaceX </h2>  
+    
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+  
+  </div>  
+  <div class="col-sm-4" >  
+    <h2>NeuroLink</h2>  
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit  . Fugit, libero vel? Suscipit illo culpa architecto aliquam amet quasi aliquid quod, necessitatibus molestias perferendis, voluptates ipsa!</p>
+  
+  </div>
+</div>
+</html>
